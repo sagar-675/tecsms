@@ -3,18 +3,18 @@
 
 // Database configuration
 define('DB_HOST', 'localhost');
-define('DB_USER', 'a178413f_tecsmsadmin');
-define('DB_PASS', 'Sagar@365#');
-define('DB_NAME', 'a178413f_tecsms');
+define('DB_USER', 'YOUR_DATABASE_USER');
+define('DB_PASS', 'YOUR_DATABASE_PASSWORD');
+define('DB_NAME', 'YOUR_DATABASE_NAME');
 
 // Security settings
-define('MASTER_API_KEY', 'TEC_SMS_k8J2n9X4p0w7Q3v1M5'); // Master key for billing/sending systems
+define('MASTER_API_KEY', 'YOUR_MASTER_API_KEY_HERE'); // Master key for billing/sending systems
 
 // SMTP Email Configurations (Gmail SMTP Relay)
 define('SMTP_HOST', 'ssl://smtp.gmail.com');
 define('SMTP_PORT', 465);
-define('SMTP_USER', 'tecrepairinsurat@gmail.com');
-define('SMTP_PASS', 'lbntktlhzqqyitnp'); // Google App Password without spaces
+define('SMTP_USER', 'YOUR_SMTP_GMAIL_ADDRESS@gmail.com');
+define('SMTP_PASS', 'YOUR_GMAIL_APP_PASSWORD_HERE'); // Google App Password without spaces
 
 // Function to send secure emails via SMTP sockets in pure PHP
 function sendSmtpEmail($to, $subject, $body) {

@@ -31,9 +31,9 @@ Import the queries inside `backend/schema.sql` inside your cPanel phpMyAdmin dat
 To connect your backend scripts to the database, update your credentials in [db_config.php](file:///c:/Users/Admin/Desktop/TEC%20SMS/backend/db_config.php):
 ```php
 define('DB_HOST', 'localhost');
-define('DB_USER', 'a178413f_tecsmsadmin');
-define('DB_PASS', 'Sagar@365#');
-define('DB_NAME', 'a178413f_tecsms');
+define('DB_USER', 'YOUR_DATABASE_USER');
+define('DB_PASS', 'YOUR_DATABASE_PASSWORD');
+define('DB_NAME', 'YOUR_DATABASE_NAME');
 ```
 
 ---
@@ -45,8 +45,8 @@ Configure these constants in [db_config.php](file:///c:/Users/Admin/Desktop/TEC%
 ```php
 define('SMTP_HOST', 'ssl://smtp.gmail.com');
 define('SMTP_PORT', 465);
-define('SMTP_USER', 'tecrepairinsurat@gmail.com');
-define('SMTP_PASS', 'lbntktlhzqqyitnp'); // Gmail App Password
+define('SMTP_USER', 'YOUR_SMTP_EMAIL@gmail.com');
+define('SMTP_PASS', 'YOUR_SMTP_APP_PASSWORD'); // Gmail App Password
 ```
 
 ---
@@ -70,9 +70,9 @@ To queue messages from external software (like billing portals, CRMs, or custom 
 ### 1. Authentication Methods
 The API supports two authorization keys passed either as header `X-API-KEY` or query parameter `api_key`:
 
-*   **Master API Key (`TEC_SMS_k8J2n9X4p0w7Q3v1M5`):**
+*   **Master API Key (`YOUR_MASTER_API_KEY`):**
     Allows queueing messages to **any** device. Leaving the `device_id` field empty automatically load-balances SMS across all active connected phones.
-*   **Device API Key (e.g., `dev_key_de19a54e5293ecac8f3a26cf8d4f3a53`):**
+*   **Device API Key (e.g., `YOUR_DEVICE_API_KEY`):**
     Allows client applications to authenticate using their own phone's unique security key. The backend automatically forces message delivery through the key's matching phone.
 
 ---
@@ -84,9 +84,9 @@ The API supports two authorization keys passed either as header `X-API-KEY` or q
 <?php
 $url = "https://sms.tecrepair.in/send_sms.php";
 $data = [
-    "api_key" => "dev_key_de19a54e5293ecac8f3a26cf8d4f3a53", // Device API Key
-    "phone" => "918160540360", // Recipient with Country Code
-    "msg" => "Hello Sagar, this is a test SMS."
+    "api_key" => "YOUR_DEVICE_API_KEY", // Device API Key
+    "phone" => "91XXXXXXXXXX", // Recipient with Country Code
+    "msg" => "Hello, this is a test SMS."
 ];
 
 $ch = curl_init($url);
@@ -108,9 +108,9 @@ import json
 
 url = "https://sms.tecrepair.in/send_sms.php"
 payload = {
-    "api_key": "dev_key_de19a54e5293ecac8f3a26cf8d4f3a53",
-    "phone": "918160540360",
-    "msg": "Hello Sagar, this is a python request SMS test."
+    "api_key": "YOUR_DEVICE_API_KEY",
+    "phone": "91XXXXXXXXXX",
+    "msg": "Hello, this is a python request SMS test."
 }
 
 response = requests.post(url, headers={"Content-Type": "application/json"}, data=json.dumps(payload))
@@ -126,7 +126,7 @@ Access the live server control center here:
 
 ### Security Login
 - The dashboard is protected by a session security form.
-- You must enter the **Master API Key** (`TEC_SMS_k8J2n9X4p0w7Q3v1M5`) to unlock the data. 
+- You must enter the **Master API Key** (`YOUR_MASTER_API_KEY`) to unlock the data. 
 - Use the **Logout** button to clear session variables and lock access.
 
 ### Features
