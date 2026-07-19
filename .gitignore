@@ -1,0 +1,31 @@
+# Android build files
+.gradle/
+build/
+app/build/
+local.properties
+.navigation/
+captures/
+.externalNativeBuild
+.cxx
+*~
+*.apk
+
+# IDE configuration files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# System and logs
+.DS_Store
+Thumbs.db
+*.log
+
+# Diagnostics scripts
+backend/describe.php
+backend/test_query.php
+backend/test_verify.php
+backend/repair_tables.php
+backend/check_key.php
+backend/check_disk.php
+backend/check_queue.php
